@@ -3,6 +3,7 @@ package com.redcatdev86.openpdfdemo.conf;
 import com.redcatdev86.openpdfdemo.service.impl.SampleTablePdfExporterImpl;
 import com.redcatdev86.openpdfdemo.service.impl.SimpleHeaderFooterPdfPageExporter;
 import com.redcatdev86.openpdfdemo.service.impl.SimpleHeaderFooterWithPageExporter;
+import com.redcatdev86.openpdfdemo.service.impl.SummaryShopPdfExporterImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -28,5 +29,11 @@ public class ExporterConfiguration {
     @Scope(value = SCOPE_PROTOTYPE)
     public SampleTablePdfExporterImpl sampleTablePdfExporter(){
         return new SampleTablePdfExporterImpl();
+    }
+
+    @Bean(initMethod = "init")
+    @Scope(value = SCOPE_PROTOTYPE)
+    public SummaryShopPdfExporterImpl summaryShopPdfExporter(){
+        return new SummaryShopPdfExporterImpl();
     }
 }

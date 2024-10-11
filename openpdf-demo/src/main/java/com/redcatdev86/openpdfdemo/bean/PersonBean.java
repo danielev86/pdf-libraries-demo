@@ -12,7 +12,6 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class PersonBean implements Serializable {
 
     private Long id;
@@ -22,5 +21,7 @@ public class PersonBean implements Serializable {
     private String lastName;
 
     private Date dateOfBirth;
+
+    private String phoneNumber;
 
 }
